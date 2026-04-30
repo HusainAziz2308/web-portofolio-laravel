@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portofolio Husain Aziz</title>
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <!-- 1. Tambahkan CSS AOS untuk animasi scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-slate-50 font-sans antialiased">
-    {{-- Navbar --}}
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px4 sm:px-6 lg:px-8">
-            <div class="font-bold text 2xl text indigo-600">Husain.dev</div>
-            <div class="hiddem md:flex space-x-8 font-medium">
-                <a href="/" class="text-gray-700 hover:text-indigo-600">Home</a>
-                <a href="/about" class="text-gray-700 hover:text-indigo-600">About</a>
-                <a href="/projects" class="text-gray-700 hover:text-indigo-600">Projects</a>
-            </div>
-            <div>
-                <a href="{{ route('login') }}" class="text-sm text bg-slate-400 hover:bg-slate-600">Login</a>
+<body class="bg-slate-900 text-white font-sans antialiased"> <!-- Kita pakai tema gelap biar mirip referensi -->
+
+    <!-- Navbar Transparan & Melayang -->
+    <nav class="fixed w-full z-50 bg-transparent backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between h-20 items-center">
+            <a href="/" class="font-bold text-2xl tracking-wider">Husain<span class="text-indigo-500">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
             </div>
         </div>
     </nav>
 
-    {{-- Main Content --}}
     <main>
         @yield('content')
     </main>
 
-    {{-- Footer --}}
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-20">
-        <div class="text-center">
-            <p>&copy; {{ date('Y') }} Husain Aziz. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- 2. Tambahkan Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi animasi
+        AOS.init({
+            duration: 1000, // Durasi animasi 1 detik
+            once: true, // Animasi hanya jalan sekali saat discroll
+        });
+    </script>
 </body>
 </html>

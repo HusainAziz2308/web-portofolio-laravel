@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Profile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $profile = Profile::first();
+    return view('frontend.index', compact('profile'));
 });
 
 Route::get('/dashboard', function () {
