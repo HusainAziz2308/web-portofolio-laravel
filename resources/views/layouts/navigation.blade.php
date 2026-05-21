@@ -20,6 +20,21 @@
                     <x-nav-link :href="route('admin.profil.edit')" :active="request()->routeIs('admin.profil.edit')">
                         {{ __('Edit Profil Web') }}
                     </x-nav-link>
+
+                    {{-- Link ke Halaman Upload CV --}}
+                    <x-nav-link :href="route('admin.cv.index')" :active="request()->routeIs('admin.cv.index')">
+                        {{ __('Upload CV') }}
+                    </x-nav-link>
+
+                    {{-- Link ke Halaman Skills --}}
+                    <x-nav-link :href="route('admin.skills.index')" :active="request()->routeIs('admin.skills.index')">
+                        {{ __('Skills') }}
+                    </x-nav-link>
+
+                    {{-- Link ke Halaman Projects --}}
+                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
                 </div>
             </div>
 
