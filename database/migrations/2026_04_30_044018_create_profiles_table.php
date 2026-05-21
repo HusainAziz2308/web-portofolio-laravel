@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('hero_subtitle')->nullable();
             $table->string('photo_path')->nullable();
             $table->text('about_text')->nullable();
+            $table->string('cv_id')->nullable(); // CV Bahasa Indonesia
+            $table->string('cv_en')->nullable(); // CV Bahasa Inggris
             $table->timestamps();
         });
     }

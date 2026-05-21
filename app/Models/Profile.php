@@ -12,5 +12,7 @@ class Profile extends Model
         'hero_title',
         'hero_subtitle',
         'about_text',
+        'cv_id',
+        'cv_en',
     ];
 }
