@@ -8,7 +8,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/lambda.php"
+      "destination": "/api/husain.php"
     }
   ]
 }
